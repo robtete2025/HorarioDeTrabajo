@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Malla Semanal</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div id="login">
+    <h2>Ingreso</h2>
+    <input type="password" id="password" placeholder="Contraseña" onkeydown="if(event.key==='Enter') window.login()">
+    <button onclick="window.login()">Ingresar</button>
+</div>
+
+<div id="contenido" style="display:none;">
+
+    <h2 class="titulo">MALLA SEMANAL</h2>
+
+    <input type="text" id="buscador" placeholder="Buscar trabajador..." onkeyup="window.buscar()">
+
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="4">Asociado<br>Nombre</th>
+                <th colspan="2" id="d0">Lunes</th>
+                <th colspan="2" id="d1">Martes</th>
+                <th colspan="2" id="d2">Miércoles</th>
+                <th colspan="2" id="d3">Jueves</th>
+                <th colspan="2" id="d4">Viernes</th>
+                <th colspan="2" id="d5">Sábado</th>
+                <th colspan="2" id="d6">Domingo</th>
+                <th rowspan="4">Total</th>
+                <th rowspan="4">Firma</th>
+            </tr>
+            <tr>
+                <th>Entrada</th><th>Salida</th>
+                <th>Entrada</th><th>Salida</th>
+                <th>Entrada</th><th>Salida</th>
+                <th>Entrada</th><th>Salida</th>
+                <th>Entrada</th><th>Salida</th>
+                <th>Entrada</th><th>Salida</th>
+                <th>Entrada</th><th>Salida</th>
+            </tr>
+            <tr>
+                <th>Refrigerio</th><th>Hrs. Día</th>
+                <th>Refrigerio</th><th>Hrs. Día</th>
+                <th>Refrigerio</th><th>Hrs. Día</th>
+                <th>Refrigerio</th><th>Hrs. Día</th>
+                <th>Refrigerio</th><th>Hrs. Día</th>
+                <th>Refrigerio</th><th>Hrs. Día</th>
+                <th>Refrigerio</th><th>Hrs. Día</th>
+            </tr>
+            <tr>
+                <th>Capacitación</th><th>Lactancia</th>
+                <th>Capacitación</th><th>Lactancia</th>
+                <th>Capacitación</th><th>Lactancia</th>
+                <th>Capacitación</th><th>Lactancia</th>
+                <th>Capacitación</th><th>Lactancia</th>
+                <th>Capacitación</th><th>Lactancia</th>
+                <th>Capacitación</th><th>Lactancia</th>
+            </tr>
+        </thead>
+        <tbody id="tabla"></tbody>
+    </table>
+
+    <button id="btnFloat" style="display:none;" onclick="window.abrirModal()">＋</button>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3>Agregar Trabajador</h3>
+            <input type="text" id="nuevoNombre" placeholder="Nombre completo" onkeydown="if(event.key==='Enter') window.guardarTrabajador()">
+            <br><br>
+            <button onclick="window.guardarTrabajador()">Guardar</button>
+            <button onclick="window.cerrarModal()">Cancelar</button>
+        </div>
+    </div>
+
+</div>
+
+<script type="module" src="./script.js"></script>
+</body>
+</html>
